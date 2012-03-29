@@ -1,0 +1,142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Intro &mdash; Askbot v0.7.36 documentation</title>
+    <link rel="stylesheet" href="_static/traditional.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.7.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Askbot v0.7.36 documentation" href="index.html" /> 
+  </head>
+  <body>
+<div class="logo">
+  <a href="/doc/index.html"><h1>Askbot Project Documentation</h1></a>
+  <div class="topnav">
+    <a href="http://twitter.com/askbot7" alt="Follow us on twitter"><img src="_static/twitter.png"/></a>
+    <a href="https://www.facebook.com/pages/Askbot/128297183877495" alt="like us on Facebook"><img src="_static/facebook.png"/></a>
+  </div>
+</div>
+<div class="ab-proj-header">
+        <a href="/">Home</a> | 
+        <a href="/en/questions/" title="Ask Questions">Ask Questions</a> | 
+        <a href="/hire-us" alt='Hire Us'>Hire Us</a> |
+        <a href="/doc/index.html" alt="Documentation">Documentation</a> | 
+        <a href="/contribute" alt='Contribute'>Contribute</a> | 
+        <a href="/feedback/" alt='contact'>Contact</a>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="intro">
+<h1>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h1>
+<p>ROADMAP aims to streamline activities of the Askbot open source project and
+to minimize ad-hoc approaches of &#8220;big-picture&#8221; level.</p>
+<p>Askbot is a Question and Answer system for the normal people!</p>
+</div>
+<div class="section" id="basic-principles-of-the-project">
+<h1>Basic principles of the project<a class="headerlink" href="#basic-principles-of-the-project" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>We favor plain and minimalistic style of programming, but pay</dt>
+<dd>attention to detail - especially details of user experience.</dd>
+</dl>
+<p>We try do develop using the following workflow:</p>
+<ul class="simple">
+<li>specify problem that we try to solve</li>
+<li>create requirements that will guarantee a solution, once met</li>
+<li>dream up some implementation ideas (maybe even some sketches on the paper)</li>
+<li>discuss and decide on the best one</li>
+<li>write and test code</li>
+</ul>
+<p>The process doesn&#8217;t have to be this formal all the time, but trying to stick
+to some subset of this almost always helps!
+Especially it helps to iron out disagreements between
+individual programmers (which if you are one - you know are qute common).</p>
+<p>Ad-hoc programming - i.e. simply go and add code - is not really encouraged.
+This works fine in the one person team or when the team consists of
+best friends, but is almost sure to fail in a heterogenous group.</p>
+</div>
+<div class="section" id="architecture-and-requirements">
+<h1>Architecture and Requirements<a class="headerlink" href="#architecture-and-requirements" title="Permalink to this headline">¶</a></h1>
+<p>Obviously Django and Python are pre-made choices - so this
+is not going to change any time soon. At this point all of
+the client side Javascript is written using jQuery library.</p>
+<p>Our basic principle is that Askbot should be a mashable Q&amp;A component.
+Askbot is an application written in Python/Django. So it should be
+distributable as a Django App alone, but can be deployed as a dedicated site
+with the script &#8220;askbot-setup&#8221;, that also ships with askbot.</p>
+<p>If we develop a sub-system that can be used in the broader scope -
+we package it as a separate django application (login system is one example).</p>
+<p>We will start using Google Closure library soon!</p>
+<div class="section" id="skins">
+<h2>Skins<a class="headerlink" href="#skins" title="Permalink to this headline">¶</a></h2>
+<p>Skins eventually must be upgrade-stable - that is people who created custom
+skins should not need to change anything if something changes in the code</p>
+</div>
+<div class="section" id="admin-interface">
+<h2>Admin interface<a class="headerlink" href="#admin-interface" title="Permalink to this headline">¶</a></h2>
+<p>We use a forked application &#8220;livesettings&#8221; that ideally should be merged
+back to the original livesettings application.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Intro</a></li>
+<li><a class="reference internal" href="#basic-principles-of-the-project">Basic principles of the project</a></li>
+<li><a class="reference internal" href="#architecture-and-requirements">Architecture and Requirements</a><ul>
+<li><a class="reference internal" href="#skins">Skins</a></li>
+<li><a class="reference internal" href="#admin-interface">Admin interface</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2011, Askbot Project.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

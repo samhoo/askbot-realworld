@@ -1,0 +1,145 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Footnotes &mdash; Askbot v0.7.36 documentation</title>
+    <link rel="stylesheet" href="_static/traditional.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.7.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Askbot v0.7.36 documentation" href="index.html" />
+    <link rel="next" title="Contributors to Askbot Project" href="contributors.html" />
+    <link rel="prev" title="Skin system in Askbot" href="customizing-skin-in-askbot.html" /> 
+  </head>
+  <body>
+<div class="logo">
+  <a href="/doc/index.html"><h1>Askbot Project Documentation</h1></a>
+  <div class="topnav">
+    <a href="http://twitter.com/askbot7" alt="Follow us on twitter"><img src="_static/twitter.png"/></a>
+    <a href="https://www.facebook.com/pages/Askbot/128297183877495" alt="like us on Facebook"><img src="_static/facebook.png"/></a>
+  </div>
+</div>
+<div class="ab-proj-header">
+        <a href="/">Home</a> | 
+        <a href="/en/questions/" title="Ask Questions">Ask Questions</a> | 
+        <a href="/hire-us" alt='Hire Us'>Hire Us</a> |
+        <a href="/doc/index.html" alt="Documentation">Documentation</a> | 
+        <a href="/contribute" alt='Contribute'>Contribute</a> | 
+        <a href="/feedback/" alt='contact'>Contact</a>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="footnotes">
+<h1>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h1>
+<p>This page summarizes additional information that might be useful
+for deployment of development of <tt class="docutils literal"><span class="pre">askbot</span></tt>.</p>
+<div class="section" id="git">
+<span id="id1"></span><h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<p>At askbot we use <tt class="docutils literal"><span class="pre">git</span></tt> to keep track of the source code,
+and the main repository is hosted at
+<a class="reference external" href="https://github.com/ASKBOT/askbot-devel">github</a>.</p>
+<p>With git you can always grab
+the latest code of askbot from the
+latest <tt class="docutils literal"><span class="pre">askbot</span></tt> code:</p>
+<div class="highlight-python"><pre>git clone git://github.com/ASKBOT/askbot-devel.git</pre>
+</div>
+<p>Do some customization by editing files and then:</p>
+<div class="highlight-python"><pre>git add &lt;list-of-changed-files&gt;
+git commit -m 'explain why you have changed some files'</pre>
+</div>
+<p>Bring updates from the main repo:</p>
+<div class="highlight-python"><pre>git git fetch origin master:github #.. onto a local branch called github
+git checkout master
+git merge github</pre>
+</div>
+<p>If all goes well, you are done. Otherwise, you may need to
+<a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#resolving-a-merge">resolve the conflict</a>.</p>
+<p>Here is a
+<a class="reference external" href="http://www.ralfebert.de/tutorials/git/">good basic tutorial</a>
+about git,
+more comprehensive ones
+<a class="reference external" href="http://book.git-scm.com/">here</a>
+and
+<a class="reference external" href="http://help.github.com/">there</a>.
+Finally, you also may want to visit the
+official git <a class="reference external" href="http://gitref.org">reference</a>
+and <a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/">documentation</a>.
+There are <a class="reference external" href="http://gitcasts.com/">screencasts</a> too.</p>
+</div>
+<div class="section" id="pip">
+<span id="id2"></span><h2>Pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">Pip</span></tt> is the best package management tool for python, allows to install and
+unistall python packages, supports installation from source code repositories
+and much more.</p>
+<p>For more information about <tt class="docutils literal"><span class="pre">pip</span></tt>,
+including its installation,
+please visit the <a class="reference external" href="http://pypi.python.org/pypi/pip">pip package page</a>
+and the links within.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Footnotes</a><ul>
+<li><a class="reference internal" href="#git">Git</a></li>
+<li><a class="reference internal" href="#pip">Pip</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="customizing-skin-in-askbot.html"
+                        title="previous chapter">Skin system in Askbot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="contributors.html"
+                        title="next chapter">Contributors to Askbot Project</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2011, Askbot Project.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

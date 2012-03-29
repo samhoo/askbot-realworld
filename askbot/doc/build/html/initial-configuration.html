@@ -1,0 +1,193 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Initial Configuration of Askbot &mdash; Askbot v0.7.36 documentation</title>
+    <link rel="stylesheet" href="_static/traditional.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.7.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Askbot v0.7.36 documentation" href="index.html" />
+    <link rel="next" title="Initialization and upgrade of the database for Askbot" href="initialize-database-tables.html" />
+    <link rel="prev" title="Create database for Askbot" href="create-database.html" /> 
+  </head>
+  <body>
+<div class="logo">
+  <a href="/doc/index.html"><h1>Askbot Project Documentation</h1></a>
+  <div class="topnav">
+    <a href="http://twitter.com/askbot7" alt="Follow us on twitter"><img src="_static/twitter.png"/></a>
+    <a href="https://www.facebook.com/pages/Askbot/128297183877495" alt="like us on Facebook"><img src="_static/facebook.png"/></a>
+  </div>
+</div>
+<div class="ab-proj-header">
+        <a href="/">Home</a> | 
+        <a href="/en/questions/" title="Ask Questions">Ask Questions</a> | 
+        <a href="/hire-us" alt='Hire Us'>Hire Us</a> |
+        <a href="/doc/index.html" alt="Documentation">Documentation</a> | 
+        <a href="/contribute" alt='Contribute'>Contribute</a> | 
+        <a href="/feedback/" alt='contact'>Contact</a>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="initial-configuration-of-askbot">
+<span id="compile-time-configuration"></span><h1>Initial Configuration of Askbot<a class="headerlink" href="#initial-configuration-of-askbot" title="Permalink to this headline">¶</a></h1>
+<p>While most configuration settings for askbot can be done at any time <a class="reference internal" href="run-time-configuration.html#run-time-configuration"><em>through the web-interface</em></a>, some manipulations on the server are still necessary.</p>
+<div class="section" id="installing-askbot-as-a-new-django-project-standalone-app">
+<h2>Installing Askbot as a new Django project (standalone app)<a class="headerlink" href="#installing-askbot-as-a-new-django-project-standalone-app" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Firstly - if you are preparing the project directory manually,
+make sure that directory name of the new django project does not
+have the <cite>.</cite> - dot - symbol.
+For example:</p>
+<div class="last highlight-python"><pre>mkdir mydjangosite
+cd mydjangosite</pre>
+</div>
+</div>
+<p>When installing Askbot for the first time, you will need to initialize the project setup files by typing:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">askbot</span><span class="o">-</span><span class="n">setup</span>
+</pre></div>
+</div>
+<p>and answering the questions. The <cite>askbot-setup</cite> script will ask you where to deploy Askbot. If you are in
+the directory where the Askbot project resides, you can answer <cite>.</cite> (<cite>.</cite> refers to the current directory).
+There may be an error message; ignore it.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>All Django sites have four project-wide files:</p>
+<div class="highlight-python"><pre>settings.py - the main settings configuration file
+urls.py     - main url configuration
+__init__.py - often empty but needed for Python
+manage.py   - the hook allowing to run management commands</pre>
+</div>
+<p class="last"><cite>askbot-setup</cite> adds those files to the directory you select (and some more things specific to Askbot).</p>
+</div>
+<p class="versionadded">
+<span class="versionmodified">New in version 0.7.24: </span><cite>askbot-setup</cite> also have command line arguments such as folder name(name), database name, database password and database user also added verbosity support.
+You can also specify a local settings file to append it&#8217;s contents to the deployment settings file.<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Parameter</th>
+<th class="head">Purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>-n &lt;NAME&gt;</td>
+<td>Name of the instance, this is the name that the
+folder will use.</td>
+</tr>
+<tr><td>-d &lt;DATABASE_NAME&gt;</td>
+<td>The database name that the instance will use.</td>
+</tr>
+<tr><td>-u &lt;DATABASE_USER&gt;</td>
+<td>The database user that the instance will use.</td>
+</tr>
+<tr><td>-p &lt;DATABASE_PASSWORD&gt;</td>
+<td>The database password for the user.</td>
+</tr>
+<tr><td>&#8211;domain=&lt;DOMAIN_NAME&gt;</td>
+<td>Domain name for the application.</td>
+</tr>
+<tr><td>&#8211;append-settings=&lt;SETTINGS_FILE&gt;</td>
+<td>Allows to append a setting file content to the
+settings file, the parameter is the file to use.</td>
+</tr>
+</tbody>
+</table>
+</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><cite>askbot-setup</cite> command line arguments detail parameter is available when you type: askbot-setup &#8211;h.</p>
+</div>
+<p>Note that if you already have a Django site you will not want to use <cite>askbot-setup</cite>, because you don&#8217;t want to just overwrite your existing settings.py. See below for instructions.</p>
+<p>Another thing you have to do if you are creating a brand new Django project is edit the file <a class="reference external" href="http://github.com/ASKBOT/askbot-devel/blob/master/askbot/setup_templates/settings.py">settings.py</a>. At the very minimum, you will need to provide the correct values to some settings.</p>
+<p>All values must be enclosed in single quotes, as shown below:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DATABASE_ENGINE</span> <span class="o">=</span> <span class="s">&#39;&#39;</span> <span class="c">#e.g. &#39;mysql&#39;</span>
+<span class="n">DATABASE_NAME</span> <span class="o">=</span> <span class="s">&#39;&#39;</span> <span class="c">#name of the database you created, e.g. &#39;askbot&#39;.</span>
+<span class="n">DATABASE_USER</span> <span class="o">=</span> <span class="s">&#39;&#39;</span> <span class="c">#name of the database user, e.g. &#39;askbotuser&#39;.</span>
+<span class="n">DATABASE_PASSWORD</span> <span class="o">=</span> <span class="s">&#39;&#39;</span> <span class="c">#password to the database</span>
+<span class="n">CSRF_COOKIE_DOMAIN</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="c">#e.g. &#39;example.com&#39; or &#39;askbot.example.com&#39; (localhost/IP address for tests)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The files <a class="reference external" href="http://github.com/ASKBOT/askbot-devel/blob/master/askbot/setup_templates/settings.py">settings.py</a> and <a class="reference external" href="http://github.com/ASKBOT/askbot-devel/blob/master/askbot/setup_templates/urls.py">urls.py</a> may also need to be touched up
+when you upgrate the software, because new versions may bring
+new dependencies and add new site urls.</p>
+</div>
+</div>
+<div class="section" id="adding-askbot-to-an-existing-django-project">
+<h2>Adding Askbot to an existing Django project<a class="headerlink" href="#adding-askbot-to-an-existing-django-project" title="Permalink to this headline">¶</a></h2>
+<p>If you are adding askbot to an existing Django project, you will need to
+merge <a class="reference external" href="http://github.com/ASKBOT/askbot-devel/blob/master/askbot/setup_templates/settings.py">settings.py</a> and <a class="reference external" href="http://github.com/ASKBOT/askbot-devel/blob/master/askbot/setup_templates/urls.py">urls.py</a> into your project manually. The templates to be used can be found
+in the <cite>askbot/setup_templates</cite> subdirectory.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Initial Configuration of Askbot</a><ul>
+<li><a class="reference internal" href="#installing-askbot-as-a-new-django-project-standalone-app">Installing Askbot as a new Django project (standalone app)</a></li>
+<li><a class="reference internal" href="#adding-askbot-to-an-existing-django-project">Adding Askbot to an existing Django project</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="create-database.html"
+                        title="previous chapter">Create database for Askbot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="initialize-database-tables.html"
+                        title="next chapter">Initialization and upgrade of the database for Askbot</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2011, Askbot Project.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

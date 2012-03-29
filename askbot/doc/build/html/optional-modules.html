@@ -1,0 +1,243 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Optional modules &mdash; Askbot v0.7.36 documentation</title>
+    <link rel="stylesheet" href="_static/traditional.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.7.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Askbot v0.7.36 documentation" href="index.html" />
+    <link rel="next" title="Askbot as reusable django application" href="askbot-as-reusable-django-application.html" />
+    <link rel="prev" title="Sending email to askbot" href="sending-email-to-askbot.html" /> 
+  </head>
+  <body>
+<div class="logo">
+  <a href="/doc/index.html"><h1>Askbot Project Documentation</h1></a>
+  <div class="topnav">
+    <a href="http://twitter.com/askbot7" alt="Follow us on twitter"><img src="_static/twitter.png"/></a>
+    <a href="https://www.facebook.com/pages/Askbot/128297183877495" alt="like us on Facebook"><img src="_static/facebook.png"/></a>
+  </div>
+</div>
+<div class="ab-proj-header">
+        <a href="/">Home</a> | 
+        <a href="/en/questions/" title="Ask Questions">Ask Questions</a> | 
+        <a href="/hire-us" alt='Hire Us'>Hire Us</a> |
+        <a href="/doc/index.html" alt="Documentation">Documentation</a> | 
+        <a href="/contribute" alt='Contribute'>Contribute</a> | 
+        <a href="/feedback/" alt='contact'>Contact</a>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="optional-modules">
+<h1>Optional modules<a class="headerlink" href="#optional-modules" title="Permalink to this headline">¶</a></h1>
+<p>Askbot supports a number of optional modules, enabling certain features, not available
+in askbot by default.</p>
+<div class="section" id="sphinx-search">
+<span id="id1"></span><h2>Sphinx search<a class="headerlink" href="#sphinx-search" title="Permalink to this headline">¶</a></h2>
+<p>Askbot supports Sphinx search - and at this point only for MySQL.
+Tested with sphinx 0.9.8.
+May be a little outdated, please give your feedback if that is the case.</p>
+<p>To enable:</p>
+<ul class="simple">
+<li>install <a class="reference external" href="http://sphinxsearch.com/">sphinx search package</a></li>
+<li>if necessary to support Chinese language, instead take <a class="reference external" href="http://code.google.com/p/sphinx-for-chinese/">sphinx for Chinese</a></li>
+<li>prepare configuration file by running command <tt class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">get_askbot_sphinx_config</span> <span class="pre">&gt;</span> <span class="pre">sphinx.conf</span></tt></li>
+<li>if necessary, modify the <tt class="docutils literal"><span class="pre">.conf</span></tt> file (may be needed for language other than English</li>
+<li>place the <tt class="docutils literal"><span class="pre">sphinx.conf</span></tt> file to an appropriate location, like /etc/sphinx/</li>
+</ul>
+<p>Install django-sphinx python module (and follow all instructions)</p>
+<blockquote>
+<div>pip install django-sphinx</div></blockquote>
+<p>In <tt class="docutils literal"><span class="pre">settings.py</span></tt> add:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SPHINX_API_VERSION</span> <span class="o">=</span> <span class="mh">0x113</span> <span class="c">#according to django sphinx doc</span>
+<span class="n">USE_SPHINX_SEARCH</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">ASKBOT_SPHINX_SEARCH_INDEX</span> <span class="o">=</span> <span class="s">&#39;askbot&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Value of SPHINX_API_VERSION may depend on the version of
+python sphinx api installed with the django-sphinx application,
+please refer to the django-sphinx documentation.</p>
+</div>
+<p>Initialize the sphinx index (may need to log in as root):</p>
+<div class="highlight-python"><pre>indexer askbot --config /etc/sphinx/sphinx.conf</pre>
+</div>
+<p>Start the sphinx search daemon:</p>
+<div class="highlight-python"><pre>/usr/local/bin/searchd --config /etc/sphinx/sphinx.conf &amp;</pre>
+</div>
+<p>Also, add the line above to the file /etc/rc.d/rc.local or equivalent to start the daemon
+when the server reboots.</p>
+<p>Set up a periodic re-indexing job (using cron):</p>
+<div class="highlight-python"><pre>indexer askbot --rotate --config /etc/sphinx/sphinx.conf</pre>
+</div>
+<p>Finally, add lin</p>
+</div>
+<div class="section" id="embedding-video">
+<span id="id2"></span><h2>Embedding video<a class="headerlink" href="#embedding-video" title="Permalink to this headline">¶</a></h2>
+<p>Want to share videos in askbot posts? It is possible, but you will have to install a forked
+version of <tt class="docutils literal"><span class="pre">markdown2</span></tt> module, here is how:</p>
+<div class="highlight-python"><pre>pip uninstall markdown2
+pip install -e git+git://github.com/andryuha/python-markdown2.git#egg=markdown2</pre>
+</div>
+<p>Also, for this to work you&#8217;ll need to have <a class="reference internal" href="footnotes.html#pip"><em>Pip</em></a> and <a class="reference internal" href="footnotes.html#git"><em>Git</em></a> installed on your system.</p>
+<p>Finally, please go to your forum <a class="reference internal" href="live-settings.html#live-settings"><em>live settings</em></a> &#8211;&gt;
+&#8220;Settings for askbot data entry and display&#8221; and check &#8220;Enable embedding video&#8221;.</p>
+<p>Limitation: at the moment only YouTube and Veoh are supported.</p>
+</div>
+<div class="section" id="ldap-authentication">
+<span id="ldap"></span><h2>LDAP authentication<a class="headerlink" href="#ldap-authentication" title="Permalink to this headline">¶</a></h2>
+<p>To enable authentication via LDAP
+(Lightweight Directory Access Protocol, see more info elsewhere)
+, first <em class="xref std std-ref">install</em>
+<tt class="docutils literal"><span class="pre">python-ldap</span></tt> package:</p>
+<blockquote>
+<div>pip install python-ldap</div></blockquote>
+<p>After that, add configuration parameters in <a class="reference internal" href="live-settings.html#live-settings"><em>live settings</em></a>, section
+&#8220;Keys to connect the site with external services ...&#8221;
+(url <tt class="docutils literal"><span class="pre">/settings/EXTERNAL_KEYS</span></tt>, relative to the domain name)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Location of these parameters is likely to change in the future.
+When that happens, an update notice will appear in the documentation.</p>
+</div>
+<p>The parameters are:</p>
+<ul class="simple">
+<li>&#8220;Use LDAP authentication for the password login&#8221; - enable/disable the feature.
+When enabled, the user name and password will be routed to use the LDAP protocol.
+Default system password authentication will be overridden.</li>
+<li>&#8220;LDAP service provider name&#8221; - any string - just come up with a name for the provider service.</li>
+<li>&#8220;URL fro the LDAP service&#8221; - a correct url to access the service.</li>
+<li>&#8220;Explain how to change the LDAP password&#8221;
+- askbot does not provide a method to change LDAP passwords
+, therefore - use this field to explain users how they can change their passwords.</li>
+</ul>
+</div>
+<div class="section" id="uploaded-avatars">
+<h2>Uploaded avatars<a class="headerlink" href="#uploaded-avatars" title="Permalink to this headline">¶</a></h2>
+<p>To enable uploadable avatars (in addition to <em class="xref std std-ref">gravatars</em>),
+please install development version of
+application <tt class="docutils literal"><span class="pre">django-avatar</span></tt>, with the following command:</p>
+<div class="highlight-python"><pre>pip install -e git+git://github.com/ericflo/django-avatar.git#egg=django-avatar</pre>
+</div>
+<p>Then add <tt class="docutils literal"><span class="pre">avatar</span></tt> to the list of <tt class="docutils literal"><span class="pre">INSTALLED_APPS</span></tt> in your <tt class="docutils literal"><span class="pre">settings.py</span></tt> file
+and run (to install database table used by the avatar app):</p>
+<blockquote>
+<div>python manage.py syncdb</div></blockquote>
+<p>Also, settings <tt class="docutils literal"><span class="pre">MEDIA_ROOT</span></tt> and <tt class="docutils literal"><span class="pre">MEDIA_URL</span></tt> will need to be added to your <tt class="docutils literal"><span class="pre">settings.py</span></tt> file.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Version of the <tt class="docutils literal"><span class="pre">avatar</span></tt> application available at pypi may not
+be up to date, so please take the development version from the
+github repository</p>
+</div>
+</div>
+<div class="section" id="wordpress-integration">
+<h2>Wordpress Integration<a class="headerlink" href="#wordpress-integration" title="Permalink to this headline">¶</a></h2>
+<p>To enable authentication for self hosted wordpress sites(wordpress.com blogs will work with openid login). To enable it follow the following steps:</p>
+<ul class="simple">
+<li>Check if you have the package <a class="reference external" href="http://pypi.python.org/pypi/python-wordpress-xmlrpc/1.4">&#8220;python_wordpress_xmlrpc</a> from pypi.</li>
+<li>Go to your wordpress blog admin panel and serch for: Settings-&gt;Writing-&gt;Remote Publishing then check the box for XML-RPC.</li>
+<li>Go back to your askbot site settings and click on <em>Login Provider Settings</em> and then activate the option <em>Activate to allow login with self-hosted wordpress site</em>,</li>
+<li>Input your blog url to the xmlrpc.php file it will look something like this <a class="reference external" href="http://yoursite.com/xmlrpc.php">http://yoursite.com/xmlrpc.php</a></li>
+<li>Upload an icon for display in the login area.</li>
+</ul>
+<p>After doing this steps you should be able to login with your self hosted wordpress site user/password combination.</p>
+</div>
+<div class="section" id="celery-for-background-jobs">
+<h2>Celery for background jobs<a class="headerlink" href="#celery-for-background-jobs" title="Permalink to this headline">¶</a></h2>
+<p>Askbot supports <a class="reference external" href="http://celeryproject.org/">celery</a> distributed task queue for some task, to enable it follow the following steps:</p>
+<ul class="simple">
+<li>Install the following packages: <a class="reference external" href="http://pypi.python.org/pypi/django-celery">celery</a>, <a class="reference external" href="http://pypi.python.org/pypi/django-celery">django-celery</a>,  <a class="reference external" href="http://pypi.python.org/pypi/django-kombu">django-kombu</a></li>
+<li>Set <strong>CELERY_ALWAYS_EAGER</strong> setting value to <strong>False</strong></li>
+<li>Run the celery daemon: for this you can use generic init scripts or supervisor, <a class="reference external" href="http://docs.celeryproject.org/en/latest/cookbook/daemonizing.html">celery documentation have more information</a></li>
+</ul>
+<p>For <a class="reference external" href="http://supervisord.org/">supervisor</a>: add this sample config file named askbot.conf into /etc/supervisor/conf.d/ directory:</p>
+<div class="highlight-python"><pre>[program:askbot_celery]
+command=celeryd --loglevel=INFO
+
+environment=PYTHONPATH=/path/to/project
+directory=/path/to/project
+
+user=nobody
+numprocs=1
+stdout_logfile=/var/log/askbot_celery.log
+stderr_logfile=/var/log/askbot_celery.err
+autostart=true
+autorestart=true
+startsecs=10</pre>
+</div>
+<p>Then run <strong>supervisorctl update</strong> and it will be started. For more information about job handling with supervisor please visit <a class="reference external" href="http://supervisord.org/">this link</a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Optional modules</a><ul>
+<li><a class="reference internal" href="#sphinx-search">Sphinx search</a></li>
+<li><a class="reference internal" href="#embedding-video">Embedding video</a></li>
+<li><a class="reference internal" href="#ldap-authentication">LDAP authentication</a></li>
+<li><a class="reference internal" href="#uploaded-avatars">Uploaded avatars</a></li>
+<li><a class="reference internal" href="#wordpress-integration">Wordpress Integration</a></li>
+<li><a class="reference internal" href="#celery-for-background-jobs">Celery for background jobs</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sending-email-to-askbot.html"
+                        title="previous chapter">Sending email to askbot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="askbot-as-reusable-django-application.html"
+                        title="next chapter">Askbot as reusable django application</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2011, Askbot Project.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

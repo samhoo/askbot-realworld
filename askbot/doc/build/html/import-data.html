@@ -1,0 +1,142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Import other forums into Askbot &mdash; Askbot v0.7.36 documentation</title>
+    <link rel="stylesheet" href="_static/traditional.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.7.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Askbot v0.7.36 documentation" href="index.html" />
+    <link rel="next" title="Askbot management commands" href="management-commands.html" />
+    <link rel="prev" title="Deploying Askbot" href="deployment.html" /> 
+  </head>
+  <body>
+<div class="logo">
+  <a href="/doc/index.html"><h1>Askbot Project Documentation</h1></a>
+  <div class="topnav">
+    <a href="http://twitter.com/askbot7" alt="Follow us on twitter"><img src="_static/twitter.png"/></a>
+    <a href="https://www.facebook.com/pages/Askbot/128297183877495" alt="like us on Facebook"><img src="_static/facebook.png"/></a>
+  </div>
+</div>
+<div class="ab-proj-header">
+        <a href="/">Home</a> | 
+        <a href="/en/questions/" title="Ask Questions">Ask Questions</a> | 
+        <a href="/hire-us" alt='Hire Us'>Hire Us</a> |
+        <a href="/doc/index.html" alt="Documentation">Documentation</a> | 
+        <a href="/contribute" alt='Contribute'>Contribute</a> | 
+        <a href="/feedback/" alt='contact'>Contact</a>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="import-other-forums-into-askbot">
+<h1>Import other forums into Askbot<a class="headerlink" href="#import-other-forums-into-askbot" title="Permalink to this headline">¶</a></h1>
+<p>Askbot supports importing of data from StackExchange and Zendesk.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If your database contains any data prior to importing, please back it up before proceeding.</p>
+</div>
+<div class="section" id="stackexchange">
+<h2>StackExchange<a class="headerlink" href="#stackexchange" title="Permalink to this headline">¶</a></h2>
+<p>Add <cite>askbot.importers.stackexchange</cite> to the list of <cite>INSTALLED_APPS</cite> list in your <cite>settings.py</cite>, then run:</p>
+<div class="highlight-python"><pre>python manage.py syncdb</pre>
+</div>
+<p>Then there will be two ways to import your StackExchange dump:</p>
+<ul>
+<li><p class="first">via the web at url <cite>/import-data/</cite>, relative to your forum installation</p>
+</li>
+<li><p class="first">using a management command:</p>
+<div class="highlight-python"><pre>python manage.py load_stackexchange /path/to/your-se-data.zip</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="zendesk">
+<h2>Zendesk<a class="headerlink" href="#zendesk" title="Permalink to this headline">¶</a></h2>
+<p>Add <cite>askbot.importers.zendesk</cite> to the list of <cite>INSTALLED_APPS</cite> in the <cite>settings.py</cite>,
+run <cite>python manage.py syncdb</cite>.</p>
+<p>Prepare your zendesk files: put all your .xml files into one directory and tar-zip it:</p>
+<div class="highlight-python"><pre>mkdir somedir
+mv *.xml somedir #select the zendesk xml files and move them to the directory
+tar cvfz zendesk.tgz somedir #name of the tgz file is not important</pre>
+</div>
+<p>Then run the import script:</p>
+<div class="highlight-python"><pre>python manage.py import_zendesk zendesk.tgz #file name is the parameter</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is possible that import script will make some mistakes in determining
+which post in the group is the question, due to some specifics of zendesk
+data format. If so, please enable feature
+&#8220;Forum data rules&#8221;-&gt;&#8221;allow switching question with answer&#8221;
+in <a class="reference internal" href="live-settings.html#live-settings"><em>live settings</em></a> and use it in an admin or a moderator
+account.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Import other forums into Askbot</a><ul>
+<li><a class="reference internal" href="#stackexchange">StackExchange</a></li>
+<li><a class="reference internal" href="#zendesk">Zendesk</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="deployment.html"
+                        title="previous chapter">Deploying Askbot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="management-commands.html"
+                        title="next chapter">Askbot management commands</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2011, Askbot Project.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

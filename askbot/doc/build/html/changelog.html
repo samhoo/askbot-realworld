@@ -1,0 +1,303 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Changes in Askbot &mdash; Askbot v0.7.36 documentation</title>
+    <link rel="stylesheet" href="_static/traditional.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.7.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Askbot v0.7.36 documentation" href="index.html" />
+    <link rel="prev" title="Contributors to Askbot Project" href="contributors.html" /> 
+  </head>
+  <body>
+<div class="logo">
+  <a href="/doc/index.html"><h1>Askbot Project Documentation</h1></a>
+  <div class="topnav">
+    <a href="http://twitter.com/askbot7" alt="Follow us on twitter"><img src="_static/twitter.png"/></a>
+    <a href="https://www.facebook.com/pages/Askbot/128297183877495" alt="like us on Facebook"><img src="_static/facebook.png"/></a>
+  </div>
+</div>
+<div class="ab-proj-header">
+        <a href="/">Home</a> | 
+        <a href="/en/questions/" title="Ask Questions">Ask Questions</a> | 
+        <a href="/hire-us" alt='Hire Us'>Hire Us</a> |
+        <a href="/doc/index.html" alt="Documentation">Documentation</a> | 
+        <a href="/contribute" alt='Contribute'>Contribute</a> | 
+        <a href="/feedback/" alt='contact'>Contact</a>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="changes-in-askbot">
+<h1>Changes in Askbot<a class="headerlink" href="#changes-in-askbot" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="development-version-not-released-yet">
+<h2>Development version (not released yet)<a class="headerlink" href="#development-version-not-released-yet" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>added basic slugification treatment to question titles with
+<tt class="docutils literal"><span class="pre">ALLOW_UNICODE_SLUGS</span> <span class="pre">=</span> <span class="pre">True</span></tt> (Evgeny)</li>
+</ul>
+</div>
+<div class="section" id="dec-20-2011">
+<h2>0.7.36 (Dec 20, 2011)<a class="headerlink" href="#dec-20-2011" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>bugfix and made the logo not used by default</li>
+</ul>
+</div>
+<div class="section" id="dec-15-2011">
+<h2>0.7.35 (Dec 15, 2011)<a class="headerlink" href="#dec-15-2011" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Removal of offensive flags (<a class="reference external" href="http://www.atomidata.com/">Dejan Noveski</a>)</li>
+<li>Fixes in CSS (<a class="reference external" href="http://byroncorrales.blogspot.com/">Byron Corrales</a>)</li>
+<li>Update of Catalan locale (Jordi Bofill)</li>
+</ul>
+</div>
+<div class="section" id="dec-10-2011">
+<h2>0.7.34 (Dec 10, 2011)<a class="headerlink" href="#dec-10-2011" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Returned support of Django 1.2</li>
+</ul>
+</div>
+<div class="section" id="dec-6-2011">
+<h2>0.7.33 (Dec 6, 2011)<a class="headerlink" href="#dec-6-2011" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Made on log in redirect to the forum index page by default
+and to the question page, if user was reading the question
+it is still possible to override the <tt class="docutils literal"><span class="pre">next</span></tt> url parameter
+or just rely on django&#8217;s <tt class="docutils literal"><span class="pre">LOGIN_REDIRECT_URL</span></tt> (Evgeny)</li>
+<li>Implemented retraction of offensive flags (Dejan Noveski)</li>
+<li>Made automatic dependency checking more complete (Evgeny)</li>
+</ul>
+</div>
+<div class="section" id="nov-30-2011">
+<h2>0.7.32 (Nov 30, 2011)<a class="headerlink" href="#nov-30-2011" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Bugfixes in English locale (Evgeny)</li>
+</ul>
+</div>
+<div class="section" id="nov-29-2011">
+<h2>0.7.31 (Nov 29, 2011)<a class="headerlink" href="#nov-29-2011" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added <tt class="docutils literal"><span class="pre">askbot_create_test_fixture</span></tt> management command (Dejan Noveski)</li>
+<li>Integrated new test fixture into the page load test cases (Dejan Noveski)</li>
+<li>Added an embeddable widget for the questions list matching tags (Daniel Mican, Evgeny Fadeev, Dejan Noveski)</li>
+</ul>
+</div>
+<div class="section" id="nov-28-2011">
+<h2>0.7.30 (Nov 28, 2011)<a class="headerlink" href="#nov-28-2011" title="Permalink to this headline">¶</a></h2>
+<p>Note: some of these features were added in one of the three previous versions.</p>
+<ul class="simple">
+<li>Context-sensitive RSS url (<a class="reference external" href="http://www.atomidata.com/">Dejan Noveski</a>)</li>
+<li>Implemented new version of skin (Byron Corrales)</li>
+<li>Show unused vote count (Tomasz Zielinski)</li>
+<li>Categorized live settings (Evgeny)</li>
+<li>Merge users management command (Daniel Mican)</li>
+<li>Added management command <tt class="docutils literal"><span class="pre">send_accept_answer_reminders</span></tt> (Evgeny)</li>
+<li>Improved the <tt class="docutils literal"><span class="pre">askbot-setup</span></tt> script (Adolfo, Evgeny)</li>
+<li>Merge users management command (Daniel Mican)</li>
+<li>Anonymous caching of the question page (Vlad Bokov)</li>
+<li>Fixed sharing button bug, css fixes for new template (Alexander Werner)</li>
+<li>Added ASKBOT_TRANSLATE_URL setting for url localization(Alexander Werner)</li>
+<li>Changed javascript translation model, moved from jqueryi18n to django (Rosandra Cuello Suñol)</li>
+<li>Private forum mode (Vlad Bokov)</li>
+<li>Improved text search query in Postgresql (Alexander Werner)</li>
+<li>Take LANGUAGE_CODE from request (Alexander Werner)</li>
+<li>Added support for LOGIN_REDIRECT_URL to the login app (hjwp, Evgeny)</li>
+<li>Updated Italian localization (Luca Ferroni)</li>
+<li>Added Catalan localization (Jordi Bofill)</li>
+<li>Added management command <tt class="docutils literal"><span class="pre">askbot_add_test_content</span></tt> (Dejan Noveski)</li>
+<li>Continued work on refactoring the database schema (Tomasz Zielinski)</li>
+</ul>
+</div>
+<div class="section" id="nov-8-28-2011">
+<h2>0.7.27 - 0.7.29 (Nov 8-28, 2011)<a class="headerlink" href="#nov-8-28-2011" title="Permalink to this headline">¶</a></h2>
+<p>For these versions we did not keep consistent record of features.</p>
+</div>
+<div class="section" id="oct-12-2011">
+<h2>0.7.26 (Oct 12, 2011)<a class="headerlink" href="#oct-12-2011" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added settings for email subscription defaults (Adolfo)</li>
+<li>Resolved <a href="#id12"><span class="problematic" id="id13">`bug #102&lt;http://bugs.askbot.org/issues/102&gt;`_</span></a> - duplicate notifications on posts with mentions (Evegeny)</li>
+<li>Added color-animated transitions when urls with hash tags are visited (Adolfo)</li>
+<li>Repository tags will be <a class="reference external" href="http://askbot.org/en/question/345/can-git-tags-be-created-for-each-of-the-releases">automatically added</a> to new releases (Evgeny, suggsted by ajmirsky)</li>
+</ul>
+</div>
+<div class="section" id="oct-5-2011">
+<h2>0.7.25 (Oct 5 2011)<a class="headerlink" href="#oct-5-2011" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>RSS feed for individual question (Sayan Chowdhury)</li>
+<li>Allow pre-population of tags via ask a questions link (Adolfo)</li>
+<li>Make answering own question one click harder (Adolfo)</li>
+<li>Bootstrap mode (Adolfo, Evgeny)</li>
+<li>Color-animated urls with the hash fragments (Adolfo)</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>0.7.24<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Made it possible to disable the anonymous user greeting alltogether (Raghu Udiyar)</li>
+<li>Added annotations for the meanings of user levels on the &#8220;moderation&#8221; page. (Jishnu)</li>
+<li>Auto-link patterns - e.g. to bug databases - are configurable from settings. (Arun SAG)</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>0.7.23<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Greeting for anonymuos users can be changed from live settings (Hrishi)</li>
+<li>Greeting for anonymous users is shown only once (Rag Sagar)</li>
+<li>Added support for Akismet spam detection service (Adolfo Fitoria)</li>
+<li>Added noscript message (Arun SAG)</li>
+<li>Support for url shortening with TinyUrl on link sharing (Rtnpro)</li>
+<li>Allowed logging in with password and email in the place of login name (Evgeny)</li>
+<li>Added config settings allowing adjust license information (Evgeny)</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>0.7.22<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Media resource revision is now incremented
+automatically any time when media is updated (Adolfo Fitoria, Evgeny Fadeev)</li>
+<li>First user automatically becomes site administrator (Adolfo Fitoria)</li>
+<li>Avatar displayed on the sidebar can be controlled with livesettings.(Adolfo Fitoria, Evgeny Fadeev)</li>
+<li>Avatar box in the sidebar is ordered with priority for real faces.(Adolfo Fitoria)</li>
+<li>Django&#8217;s createsuperuser now works with askbot (Adolfo Fitoria)</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>0.7.21<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>This version was skipped</p>
+</div>
+<div class="section" id="id6">
+<h2>0.7.20<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added support for login via self-hosted Wordpress site (Adolfo Fitoria)</li>
+<li>Allowed basic markdown in the comments (Adolfo Fitoria)</li>
+<li>Added this changelog (Adolfo Fitoria)</li>
+<li>Added support for threaded emails (Benoit Lavigne)</li>
+<li>A few more Spanish translation strings (Byron Corrales)</li>
+<li>Social sharing support on identi.ca (Rantadeep Debnath)</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>0.7.19<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Changed the Favorite question function for Follow question.</li>
+<li>Fixed issues with page load time.</li>
+<li>Added notify me checkbox to the sidebar.</li>
+<li>Removed MySql dependency from setup.py</li>
+<li>Fixed Facebook login.</li>
+<li><a class="reference external" href="http://askbot.org/en/question/587/moderation-tab-is-misaligned-fixed">Fixed &#8220;Moderation tab is misaligned&#8221; issue reported by methner.</a></li>
+<li>Fixed bug in follow users and changed the follow button design.</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>0.7.18<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://askbot.org/en/question/580/allow-alternate-capitalizations-in-user-links">Added multiple capitalization to username mentions(reported by niles)</a></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2>0.7.17<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Adding test for UserNameField.</li>
+<li>Adding test for markup functions.</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2>0.7.16<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Admins can add aministrators too.</li>
+<li>Added a postgres driver version check in the start procedures due to a bug in psycopg2 2.4.2.</li>
+<li>New inbox system style (<a class="reference external" href="http://askbot.org/en/question/470/answerscomments-are-listed-twice-in-the-inbox">bug reported by Tomasz P. Szynalski</a>).</li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h2>0.7.15<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed integration with Django 1.1.</li>
+<li>Fixed bugs in setup script.</li>
+<li>Fixed pypi bugs.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Changes in Askbot</a><ul>
+<li><a class="reference internal" href="#development-version-not-released-yet">Development version (not released yet)</a></li>
+<li><a class="reference internal" href="#dec-20-2011">0.7.36 (Dec 20, 2011)</a></li>
+<li><a class="reference internal" href="#dec-15-2011">0.7.35 (Dec 15, 2011)</a></li>
+<li><a class="reference internal" href="#dec-10-2011">0.7.34 (Dec 10, 2011)</a></li>
+<li><a class="reference internal" href="#dec-6-2011">0.7.33 (Dec 6, 2011)</a></li>
+<li><a class="reference internal" href="#nov-30-2011">0.7.32 (Nov 30, 2011)</a></li>
+<li><a class="reference internal" href="#nov-29-2011">0.7.31 (Nov 29, 2011)</a></li>
+<li><a class="reference internal" href="#nov-28-2011">0.7.30 (Nov 28, 2011)</a></li>
+<li><a class="reference internal" href="#nov-8-28-2011">0.7.27 - 0.7.29 (Nov 8-28, 2011)</a></li>
+<li><a class="reference internal" href="#oct-12-2011">0.7.26 (Oct 12, 2011)</a></li>
+<li><a class="reference internal" href="#oct-5-2011">0.7.25 (Oct 5 2011)</a></li>
+<li><a class="reference internal" href="#id2">0.7.24</a></li>
+<li><a class="reference internal" href="#id3">0.7.23</a></li>
+<li><a class="reference internal" href="#id4">0.7.22</a></li>
+<li><a class="reference internal" href="#id5">0.7.21</a></li>
+<li><a class="reference internal" href="#id6">0.7.20</a></li>
+<li><a class="reference internal" href="#id7">0.7.19</a></li>
+<li><a class="reference internal" href="#id8">0.7.18</a></li>
+<li><a class="reference internal" href="#id9">0.7.17</a></li>
+<li><a class="reference internal" href="#id10">0.7.16</a></li>
+<li><a class="reference internal" href="#id11">0.7.15</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="contributors.html"
+                        title="previous chapter">Contributors to Askbot Project</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2011, Askbot Project.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

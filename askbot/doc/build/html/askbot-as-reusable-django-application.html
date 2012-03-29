@@ -1,0 +1,145 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Askbot as reusable django application &mdash; Askbot v0.7.36 documentation</title>
+    <link rel="stylesheet" href="_static/traditional.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.7.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Askbot v0.7.36 documentation" href="index.html" />
+    <link rel="next" title="Skin system in Askbot" href="customizing-skin-in-askbot.html" />
+    <link rel="prev" title="Optional modules" href="optional-modules.html" /> 
+  </head>
+  <body>
+<div class="logo">
+  <a href="/doc/index.html"><h1>Askbot Project Documentation</h1></a>
+  <div class="topnav">
+    <a href="http://twitter.com/askbot7" alt="Follow us on twitter"><img src="_static/twitter.png"/></a>
+    <a href="https://www.facebook.com/pages/Askbot/128297183877495" alt="like us on Facebook"><img src="_static/facebook.png"/></a>
+  </div>
+</div>
+<div class="ab-proj-header">
+        <a href="/">Home</a> | 
+        <a href="/en/questions/" title="Ask Questions">Ask Questions</a> | 
+        <a href="/hire-us" alt='Hire Us'>Hire Us</a> |
+        <a href="/doc/index.html" alt="Documentation">Documentation</a> | 
+        <a href="/contribute" alt='Contribute'>Contribute</a> | 
+        <a href="/feedback/" alt='contact'>Contact</a>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="askbot-as-reusable-django-application">
+<h1>Askbot as reusable django application<a class="headerlink" href="#askbot-as-reusable-django-application" title="Permalink to this headline">¶</a></h1>
+<p>Askbot can be used both as as dedicated site and as an application
+within a larger site. There are still issues to resolve to make askbot
+a truly reusable app, but some are already solved.</p>
+<p>This page is a guide for using askbot as an independent app and it is
+somewhat technical.</p>
+<div class="section" id="adding-askbot-to-a-pre-existing-site">
+<h2>Adding askbot to a pre-existing site<a class="headerlink" href="#adding-askbot-to-a-pre-existing-site" title="Permalink to this headline">¶</a></h2>
+<p>If you already have a django site with users, after adding askbot
+to your project, run a management command just once:</p>
+<div class="highlight-python"><pre>python manage.py add_missing_subscriptions</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This only applies to users registered before the installation of Askbot.
+Newer users will have default subscription records
+created automatically, by the Django&#8217;s <tt class="docutils literal"><span class="pre">post_save</span></tt> signal.</p>
+<p class="last">The email subscription settings are also created automatically
+when certain pages are visited and when <tt class="docutils literal"><span class="pre">send_email_alerts</span></tt>
+command is run, so it is not mandatory to run
+<tt class="docutils literal"><span class="pre">add_missing_subscriptions</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="using-alternative-login-system">
+<h2>Using alternative login system<a class="headerlink" href="#using-alternative-login-system" title="Permalink to this headline">¶</a></h2>
+<p>Askbot has a bundled application for user login and registration,
+but it can be replaced with any other.
+Just remove <tt class="docutils literal"><span class="pre">'askbot.deps.django_authopenid'</span></tt>
+from the <tt class="docutils literal"><span class="pre">INSTALLED_APPS</span></tt>,
+remove <tt class="docutils literal"><span class="pre">'askbot.deps.django_authopenid.backends.AuthBackend'</span></tt>
+from the <tt class="docutils literal"><span class="pre">AUTHENTICATION_BACKENDS</span></tt>,
+install another registration app
+and modify <tt class="docutils literal"><span class="pre">LOGIN_URL</span></tt> and <tt class="docutils literal"><span class="pre">LOGOUT_URL</span></tt> accordingly.</p>
+<p>If you are adding Askbot to a django site that already has
+registered users, please see <a class="reference internal" href="#adding-askbot-to-pre-existing-site"><em>this section</em></a>.</p>
+<p>There are two caveats.</p>
+<p>Firstly, if you are using some other login/registration app,
+please disable feature
+&#8220;settings&#8221;-&gt;&#8221;data entry and display&#8221;-&gt;&#8221;allow posting before logging in&#8221;.</p>
+<p>This may be fixed in the future by adding a snippet of code to run
+right after the user logs in - please ask at askbot forum if you are
+interested.</p>
+<p>Secondly, disable setting &#8220;settings&#8221;-&gt;&#8221;user settings&#8221;-&gt;&#8221;allow add and remove login methods&#8221;.
+This one is specific to the builtin login application which allows more than one login
+method per user account.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Askbot as reusable django application</a><ul>
+<li><a class="reference internal" href="#adding-askbot-to-a-pre-existing-site">Adding askbot to a pre-existing site</a></li>
+<li><a class="reference internal" href="#using-alternative-login-system">Using alternative login system</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="optional-modules.html"
+                        title="previous chapter">Optional modules</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="customizing-skin-in-askbot.html"
+                        title="next chapter">Skin system in Askbot</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2011, Askbot Project.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

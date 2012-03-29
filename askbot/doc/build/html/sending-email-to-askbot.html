@@ -1,0 +1,121 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sending email to askbot &mdash; Askbot v0.7.36 documentation</title>
+    <link rel="stylesheet" href="_static/traditional.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.7.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Askbot v0.7.36 documentation" href="index.html" />
+    <link rel="next" title="Optional modules" href="optional-modules.html" />
+    <link rel="prev" title="Askbot management commands" href="management-commands.html" /> 
+  </head>
+  <body>
+<div class="logo">
+  <a href="/doc/index.html"><h1>Askbot Project Documentation</h1></a>
+  <div class="topnav">
+    <a href="http://twitter.com/askbot7" alt="Follow us on twitter"><img src="_static/twitter.png"/></a>
+    <a href="https://www.facebook.com/pages/Askbot/128297183877495" alt="like us on Facebook"><img src="_static/facebook.png"/></a>
+  </div>
+</div>
+<div class="ab-proj-header">
+        <a href="/">Home</a> | 
+        <a href="/en/questions/" title="Ask Questions">Ask Questions</a> | 
+        <a href="/hire-us" alt='Hire Us'>Hire Us</a> |
+        <a href="/doc/index.html" alt="Documentation">Documentation</a> | 
+        <a href="/contribute" alt='Contribute'>Contribute</a> | 
+        <a href="/feedback/" alt='contact'>Contact</a>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="sending-email-to-askbot">
+<h1>Sending email to askbot<a class="headerlink" href="#sending-email-to-askbot" title="Permalink to this headline">¶</a></h1>
+<p>Askbot supports asking questions by email via the IMAP protocol,
+answering by email is not yet supported.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This feature is still experimental and some emails will not
+be parsed, please report any issues at the askbot forum.</p>
+</div>
+<p>To enable the feature, please:</p>
+<ul class="simple">
+<li>set up an IMAP mailbox called &#8220;INBOX&#8221;</li>
+<li>in your <tt class="docutils literal"><span class="pre">settings.py</span></tt> file fill out values
+<tt class="docutils literal"><span class="pre">IMAP_HOST</span></tt>, <tt class="docutils literal"><span class="pre">IMAP_HOST_USER</span></tt>, <tt class="docutils literal"><span class="pre">IMAP_HOST_PASSWORD</span></tt>,
+<tt class="docutils literal"><span class="pre">IMAP_PORT</span></tt> and <tt class="docutils literal"><span class="pre">IMAP_USE_TLS</span></tt></li>
+<li>in the site <a class="reference internal" href="live-settings.html#live-settings"><em>live settings</em></a>, enable the
+feature</li>
+<li>set up a cron job to periodically run command
+<a class="reference internal" href="management-commands.html#email-related-commands"><em>post_emailed_questions</em></a>.
+This command will connect to the inbox, and post questions,
+based on the incoming messages.</li>
+</ul>
+<p>The email address to send the questions will be
+<tt class="docutils literal"><span class="pre">&lt;IMAP_HOST_USER&gt;&#64;&lt;IMAP_HOST&gt;</span></tt>. Also, there is a quite strict
+requirement to the format of incoming messages - described
+in a response to any incorrectly formatted emails.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">the &#8220;INBOX&#8221; used to post messages to askbot must be dedicated
+do not use any other mailbox as all messages
+are <strong>automatically deleted</strong> after each processing.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="management-commands.html"
+                        title="previous chapter">Askbot management commands</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="optional-modules.html"
+                        title="next chapter">Optional modules</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2011, Askbot Project.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>
