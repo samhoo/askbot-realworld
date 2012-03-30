@@ -324,7 +324,7 @@ msgstr "留言并提交我"
 
 #: forms.py:1152
 msgid "okay, let's try!"
-msgstr "试一试"
+msgstr "好的，试试看"
 
 #: forms.py:1153
 msgid "no community email please, thanks"
@@ -2117,7 +2117,7 @@ msgstr "相关"
 #: const/__init__.py:57
 #: skins/default/templates/user_profile/user_inbox.html:50
 msgid "all"
-msgstr "所有"
+msgstr "全选"
 
 #: const/__init__.py:58
 msgid "unanswered"
@@ -3832,7 +3832,7 @@ msgstr "您的电子邮件地址"
 #: skins/common/templates/authopenid/complete.html:72
 #: skins/common/templates/authopenid/signup_with_password.html:36
 msgid "receive updates motivational blurb"
-msgstr "获取商品信息更新"
+msgstr "获取信息更新"
 
 #: skins/common/templates/authopenid/complete.html:76
 #: skins/common/templates/authopenid/signup_with_password.html:40
@@ -4098,9 +4098,8 @@ msgid "Please register by clicking on any of the icons below"
 msgstr "请点击下面任何一个图标登录"
 
 #: skins/common/templates/authopenid/signup_with_password.html:23
-#, fuzzy
 msgid "or create a new user name and password here"
-msgstr "使用帐号密码登录"
+msgstr "或 使用帐号密码登录"
 
 #: skins/common/templates/authopenid/signup_with_password.html:25
 msgid "Create login name and password"
@@ -5521,12 +5520,11 @@ msgstr "被回复最多的问题"
 #: skins/default/templates/question/sidebar.html:8
 #, fuzzy
 msgid "Following"
-msgstr "所有问题"
+msgstr "关注中"
 
 #: skins/default/templates/question/sidebar.html:9
-#, fuzzy
 msgid "Unfollow"
-msgstr "所有问题"
+msgstr "取消关注"
 
 #: skins/default/templates/question/sidebar.html:13
 #, fuzzy
@@ -5534,9 +5532,8 @@ msgid "click to follow this question"
 msgstr "被回复最多的问题"
 
 #: skins/default/templates/question/sidebar.html:14
-#, fuzzy
 msgid "Follow"
-msgstr "所有问题"
+msgstr "关注"
 
 #: skins/default/templates/question/sidebar.html:21
 #, python-format
@@ -5667,9 +5664,8 @@ msgstr "停止发送邮件"
 
 #: skins/default/templates/user_profile/user_favorites.html:4
 #: skins/default/templates/user_profile/user_tabs.html:27
-#, fuzzy
 msgid "followed questions"
-msgstr "所有问题"
+msgstr "关注问题"
 
 #: skins/default/templates/user_profile/user_inbox.html:18
 #: skins/default/templates/user_profile/user_tabs.html:12
@@ -5696,27 +5692,27 @@ msgstr "选择:"
 
 #: skins/default/templates/user_profile/user_inbox.html:51
 msgid "seen"
-msgstr "查看"
+msgstr "已读"
 
 #: skins/default/templates/user_profile/user_inbox.html:52
 msgid "new"
-msgstr "新"
+msgstr "未读"
 
 #: skins/default/templates/user_profile/user_inbox.html:53
 msgid "none"
-msgstr "无"
+msgstr "全不选"
 
 #: skins/default/templates/user_profile/user_inbox.html:54
 msgid "mark as seen"
-msgstr "已看标记"
+msgstr "标记为已读"
 
 #: skins/default/templates/user_profile/user_inbox.html:55
 msgid "mark as new"
-msgstr "新标记"
+msgstr "标记为未读"
 
 #: skins/default/templates/user_profile/user_inbox.html:56
 msgid "dismiss"
-msgstr "驳回"
+msgstr "删除"
 
 #: skins/default/templates/user_profile/user_info.html:36
 msgid "update profile"
@@ -5765,9 +5761,8 @@ msgstr "剩余投票数"
 
 #: skins/default/templates/user_profile/user_moderate.html:4
 #: skins/default/templates/user_profile/user_tabs.html:48
-#, fuzzy
 msgid "moderation"
-msgstr "版主"
+msgstr "版务"
 
 #: skins/default/templates/user_profile/user_moderate.html:8
 #, python-format
@@ -5853,7 +5848,7 @@ msgstr ""
 #: skins/default/templates/user_profile/user_network.html:5
 #: skins/default/templates/user_profile/user_tabs.html:18
 msgid "network"
-msgstr ""
+msgstr "关注关系"
 
 #: skins/default/templates/user_profile/user_network.html:10
 #, python-format
@@ -5889,13 +5884,12 @@ msgid "source"
 msgstr ""
 
 #: skins/default/templates/user_profile/user_reputation.html:4
-#, fuzzy
 msgid "karma"
-msgstr "按积分排序"
+msgstr "积分"
 
 #: skins/default/templates/user_profile/user_reputation.html:11
 msgid "Your karma change log."
-msgstr "你的积分历史"
+msgstr "积分历史"
 
 #: skins/default/templates/user_profile/user_reputation.html:13
 #, python-format
@@ -6208,26 +6202,24 @@ msgid "UNANSWERED"
 msgstr ""
 
 #: skins/default/templates/widgets/scope_nav.html:8
-#, fuzzy
 msgid "see your followed questions"
-msgstr "查看我收藏问题"
+msgstr "查看我关注的问题"
 
 #: skins/default/templates/widgets/scope_nav.html:8
 msgid "FOLLOWED"
 msgstr ""
 
 #: skins/default/templates/widgets/scope_nav.html:11
-#, fuzzy
 msgid "Please ask your question here"
 msgstr "现在提问"
 
 #: skins/default/templates/widgets/user_long_score_and_badge_summary.html:3
 msgid "karma:"
-msgstr "按积分排序"
+msgstr "积分:"
 
 #: skins/default/templates/widgets/user_long_score_and_badge_summary.html:7
 msgid "badges:"
-msgstr "勋章榜"
+msgstr "勋章:"
 
 #: skins/default/templates/widgets/user_navigation.html:8
 msgid "logout"
@@ -6251,7 +6243,6 @@ msgid "Oops, apologies - there was some error"
 msgstr "对不起，系统错误"
 
 #: utils/decorators.py:109
-#, fuzzy
 msgid "Please login to post"
 msgstr "请登录"
 
@@ -7148,7 +7139,7 @@ msgstr "对不起，好像有一些技术上的错误。"
 #~ msgstr "积分"
 
 #~ msgid "badges: "
-#~ msgstr "勋章榜"
+#~ msgstr "勋章:"
 
 #~ msgid "comments/"
 #~ msgstr "评论"

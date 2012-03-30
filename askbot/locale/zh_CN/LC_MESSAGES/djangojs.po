@@ -69,7 +69,7 @@ msgstr ""
 
 #: skins/common/media/jquery-openid/jquery.openid.js:340
 msgid "Create a password-protected account"
-msgstr ""
+msgstr "注册"
 
 #: skins/common/media/js/post.js:28
 msgid "loading..."
