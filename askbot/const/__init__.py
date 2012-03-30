@@ -273,6 +273,7 @@ DEPENDENCY_URLS = {
     'mathjax': 'http://www.mathjax.org/resources/docs/?installation.html',
     'recaptcha': 'http://google.com/recaptcha',
     'twitter-apps': 'http://dev.twitter.com/apps/',
+    'weibo-apps': 'http://open.weibo.com/',
 }
 
 PASSWORD_MIN_LENGTH = 8

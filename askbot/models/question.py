@@ -129,10 +129,15 @@ class QuestionQuerySet(models.query.QuerySet):
             return Question.objects.filter(deleted = False, id__in = question_ids)
         if settings.DATABASE_ENGINE == 'mysql' and mysql.supports_full_text_search():
             return self.filter( 
-                        models.Q(title__search = search_query) \
-                       | models.Q(text__search = search_query) \
-                       | models.Q(tagnames__search = search_query) \
-                       | models.Q(answers__text__search = search_query)
+# samhoo
+#                        models.Q(title__search = search_query) \
+#                       | models.Q(text__search = search_query) \
+#                       | models.Q(tagnames__search = search_query) \
+#                       | models.Q(answers__text__search = search_query)
+                        models.Q(title__icontains = search_query) \
+                       | models.Q(text__icontains = search_query) \
+                       | models.Q(tagnames__icontains = search_query) \
+                       | models.Q(answers__text__icontains = search_query)
                     )
         elif 'postgresql_psycopg2' in askbot.get_database_engine_name():
             rank_clause = "ts_rank(question.text_search_vector, plainto_tsquery(%s))";

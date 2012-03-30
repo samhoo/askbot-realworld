@@ -1745,6 +1745,10 @@ var socialSharing = function(){
             url: "http://twitter.com/share?url={URL}&ref=twitbtn&text={TEXT}",
             params: "width=820,height=526,toolbar=1,status=1,resizable=1,scrollbars=1"
         },
+        weibo: {
+            url: "http://v.t.sina.com.cn/share/share.php?url={URL}&title={TEXT}&source=bookmark&appkey=3174543744",
+            params: "width=630,height=436,toolbar=1,status=1,resizable=1,scrollbars=1"
+        },
         facebook: {
             url: "http://www.facebook.com/sharer.php?u={URL}&ref=fbshare&t={TEXT}",
             params: "width=630,height=436,toolbar=1,status=1,resizable=1,scrollbars=1"
@@ -1756,6 +1760,18 @@ var socialSharing = function(){
     };
     var URL = "";
     var TEXT = "";
+
+    var share_page_without_tinyurl = function(service_name){
+        if (SERVICE_DATA[service_name]){
+            var params = SERVICE_DATA[service_name]['params'];
+            var url = SERVICE_DATA[service_name]['url'];
+            url = url.replace('{TEXT}', TEXT);
+            url = url.replace('{URL}', URL);
+                if(!window.open(url, "sharing", params)){
+                    window.location.href=url;
+                }
+         }
+    }
 
     var share_page = function(service_name){
         if (SERVICE_DATA[service_name]){
@@ -1785,19 +1801,23 @@ var socialSharing = function(){
     return {
         init: function(){
             URL = window.location.href;
-            TEXT = escape($('h1 > a').html());
+            //TEXT = escape($('h1 > a').html());
+            TEXT = encodeURIComponent($('h1 > a').html());
             var fb = $('a.facebook-share')
             var tw = $('a.twitter-share');
             var ln = $('a.linkedin-share');
             var ica = $('a.identica-share');
+            var wb = $('a.weibo-share');
             copyAltToTitle(fb);
             copyAltToTitle(tw);
             copyAltToTitle(ln);
             copyAltToTitle(ica);
+            copyAltToTitle(wb);
             setupButtonEventHandlers(fb, function(){share_page("facebook")});
             setupButtonEventHandlers(tw, function(){share_page("twitter")});
             setupButtonEventHandlers(ln, function(){share_page("linkedin")});
             setupButtonEventHandlers(ica, function(){share_page("identica")});
+            setupButtonEventHandlers(wb, function(){share_page_without_tinyurl("weibo")});
         }
     }
 }();

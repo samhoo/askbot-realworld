@@ -235,11 +235,12 @@ def complete_oauth_signin(request):
         assert(oauth_token == session_oauth_token['oauth_token'])
 
         oauth_provider_name = request.session['oauth_provider_name']
-        logging.debug('have saved provider name')
+        logging.debug('have saved provider name %s' % oauth_provider_name)
         del request.session['oauth_provider_name']
 
         oauth = util.OAuthConnection(oauth_provider_name)
 
+        logging.debug('tobe oauth.get_user_id (samhoo)')
         user_id = oauth.get_user_id(
                                 oauth_token = session_oauth_token,
                                 oauth_verifier = oauth_verifier

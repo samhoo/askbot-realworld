@@ -394,6 +394,32 @@ def get_enabled_major_login_providers():
             'type': 'facebook',
             'icon_media_path': '/jquery-openid/images/facebook.gif',
         }
+    def get_weibo_user_id(data):
+        consumer = oauth.Consumer(data['consumer_key'], data['consumer_secret'])
+        token = oauth.Token(data['oauth_token'], data['oauth_token_secret'])
+        client = oauth.Client(consumer, token=token)
+        url = 'http://api.t.sina.com.cn/account/verify_credentials.json?source=%s' % data['consumer_key']
+        logging.debug("get user id url:%s" % url)
+        response, content = client.request(url, 'GET')
+        logging.debug("get user id response:%s" % content)
+        if response['status'] == '200':
+            json = simplejson.loads(content)
+            return json['id']
+        raise OAuthError()
+    if askbot_settings.WEIBO_KEY and askbot_settings.WEIBO_SECRET:
+        data['weibo'] = {
+            'name': 'weibo',
+            'display_name': 'Weibo',
+            'type': 'oauth',
+            'request_token_url': 'http://api.t.sina.com.cn/oauth/request_token',
+            'access_token_url': 'http://api.t.sina.com.cn/oauth/access_token',
+            'authorize_url': 'http://api.t.sina.com.cn/oauth/authorize',
+            'authenticate_url': 'http://api.t.sina.com.cn/oauth/authenticate',
+            'get_user_id_url': 'http://api.t.sina.com.cn/account/verify_credentials.json?',
+            'icon_media_path': '/jquery-openid/images/weibo.png',
+            'get_user_id_function': get_weibo_user_id,
+        }
+
     if askbot_settings.TWITTER_KEY and askbot_settings.TWITTER_SECRET:
         data['twitter'] = {
             'name': 'twitter',
@@ -405,7 +431,8 @@ def get_enabled_major_login_providers():
             'authenticate_url': 'https://api.twitter.com/oauth/authenticate',
             'get_user_id_url': 'https://twitter.com/account/verify_credentials.json',
             'icon_media_path': '/jquery-openid/images/twitter.gif',
-            'get_user_id_function': lambda data: data['user_id'],
+#            'get_user_id_function': lambda data: data['user_id'],
+            'get_user_id_function': get_weibo_user_id,
         }
     def get_identica_user_id(data):
         consumer = oauth.Consumer(data['consumer_key'], data['consumer_secret'])
@@ -660,6 +687,9 @@ def get_oauth_parameters(provider_name):
     if provider_name == 'twitter':
         consumer_key = askbot_settings.TWITTER_KEY
         consumer_secret = askbot_settings.TWITTER_SECRET
+    elif provider_name == 'weibo':
+        consumer_key = askbot_settings.WEIBO_KEY
+        consumer_secret = askbot_settings.WEIBO_SECRET
     elif provider_name == 'linkedin':
         consumer_key = askbot_settings.LINKEDIN_KEY
         consumer_secret = askbot_settings.LINKEDIN_SECRET
@@ -709,6 +739,7 @@ class OAuthConnection(object):
         if callback_url:
             callback_url = '%s%s' % (askbot_settings.APP_URL, callback_url)
             request_body = urllib.urlencode(dict(oauth_callback=callback_url))
+            logging.debug("SAMHOO:%s" % request_url)
 
             self.request_token = self.send_request(
                                             client = client,
@@ -746,8 +777,10 @@ class OAuthConnection(object):
         token.set_verifier(oauth_verifier)
         client = oauth.Client(self.consumer, token = token)
         url = self.parameters['access_token_url']
+        logging.debug('samhoo url: %s' % url)
         #there must be some provider-specific post-processing
         data = self.send_request(client = client, url=url, method='GET')
+        logging.debug('after self.send_request')
         data['consumer_key'] = self.parameters['consumer_key']
         data['consumer_secret'] = self.parameters['consumer_secret']
         return self.parameters['get_user_id_function'](data)

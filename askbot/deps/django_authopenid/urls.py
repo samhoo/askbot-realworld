@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import patterns, url
-from django.utils.translation import ugettext as _
+#samhoo
+#from django.utils.translation import ugettext as _
+from django.conf import settings
+if hasattr(settings, "ASKBOT_TRANSLATE_URL") and settings.ASKBOT_TRANSLATE_URL:
+    from django.utils.translation import ugettext as _
+else:
+    _ = lambda s:s
+#samhoo
 
 urlpatterns = patterns('askbot.deps.django_authopenid.views',
     # yadis rdf

@@ -419,7 +419,7 @@ msgstr ""
 
 #: urls.py:231 urls.py:236
 msgid "badges/"
-msgstr "奖牌榜/"
+msgstr "勋章榜/"
 
 #: urls.py:241
 msgid "messages/"
@@ -2765,7 +2765,7 @@ msgstr ""
 # base_content.html
 #: importers/stackexchange/management/commands/load_stackexchange.py:141
 msgid "Congratulations, you are now an Administrator"
-msgstr "恭喜您，社区给您颁发了奖牌"
+msgstr "恭喜您，社区给您颁发了勋章"
 
 #: management/commands/initialize_ldap_logins.py:51
 msgid ""
@@ -4452,7 +4452,7 @@ msgstr "%(name)s"
 
 #: skins/default/templates/badge.html:5
 msgid "Badge"
-msgstr "奖牌"
+msgstr "勋章"
 
 #: skins/default/templates/badge.html:7
 #, fuzzy, python-format
@@ -4469,19 +4469,19 @@ msgstr "%(description)s"
 #: skins/default/templates/badge.html:14
 msgid "user received this badge:"
 msgid_plural "users received this badge:"
-msgstr[0] "用户获得奖牌"
+msgstr[0] "用户获得勋章"
 
 #: skins/default/templates/badges.html:3
 msgid "Badges summary"
-msgstr "奖牌列表"
+msgstr "勋章列表"
 
 #: skins/default/templates/badges.html:5
 msgid "Badges"
-msgstr "奖牌"
+msgstr "勋章"
 
 #: skins/default/templates/badges.html:7
 msgid "Community gives you awards for your questions, answers and votes."
-msgstr "提出问题，给予回答，投出你的票 - 社区会对你的表现，授予你各类奖牌。"
+msgstr "提出问题，给予回答，投出你的票 - 社区会对你的表现，授予你各类勋章。"
 
 #: skins/default/templates/badges.html:8
 #, fuzzy, python-format
@@ -4490,12 +4490,12 @@ msgid ""
 "of times each type of badge has been awarded. Give us feedback at "
 "%(feedback_faq_url)s.\n"
 msgstr ""
-"这里列出社区所有的奖牌，以及每类奖牌获取的所需条件。点击<a href=\\"
+"这里列出社区所有的勋章，以及每类勋章获取的所需条件。点击<a href=\\"
 "\"%(feedback_faq_url)s\\\">这里<\\a>给我们反馈。"
 
 #: skins/default/templates/badges.html:35
 msgid "Community badges"
-msgstr "奖牌等级"
+msgstr "勋章等级"
 
 #: skins/default/templates/badges.html:37
 msgid "gold badge: the highest honor and is very rare"
@@ -5136,7 +5136,7 @@ msgstr "标签使内容可以更好的组织及搜索"
 
 #: skins/default/templates/question_retag.html:32
 msgid "tag editors receive special awards from the community"
-msgstr "修改标签的用户将授予特殊的社区奖牌"
+msgstr "修改标签的用户将授予特殊的社区勋章"
 
 # todo: remove magic numbers from this file
 #: skins/default/templates/question_retag.html:59
@@ -5966,7 +5966,7 @@ msgstr[0] "<span class=\"count\">%(counter)s</span>标签"
 #, python-format
 msgid "<span class=\"count\">%(counter)s</span> Badge"
 msgid_plural "<span class=\"count\">%(counter)s</span> Badges"
-msgstr[0] "<span class=\"count\">%(counter)s</span>奖牌"
+msgstr[0] "<span class=\"count\">%(counter)s</span>勋章"
 
 #: skins/default/templates/user_profile/user_stats.html:122
 #, fuzzy
@@ -6166,7 +6166,7 @@ msgstr "用户"
 
 #: skins/default/templates/widgets/meta_nav.html:15
 msgid "badges"
-msgstr "奖牌榜"
+msgstr "勋章榜"
 
 #: skins/default/templates/widgets/question_edit_tips.html:3
 msgid "question tips"
@@ -6227,7 +6227,7 @@ msgstr "按积分排序"
 
 #: skins/default/templates/widgets/user_long_score_and_badge_summary.html:7
 msgid "badges:"
-msgstr "奖牌榜"
+msgstr "勋章榜"
 
 #: skins/default/templates/widgets/user_navigation.html:8
 msgid "logout"
@@ -7148,7 +7148,7 @@ msgstr "对不起，好像有一些技术上的错误。"
 #~ msgstr "积分"
 
 #~ msgid "badges: "
-#~ msgstr "奖牌榜"
+#~ msgstr "勋章榜"
 
 #~ msgid "comments/"
 #~ msgstr "评论"
@@ -7399,7 +7399,7 @@ msgstr "对不起，好像有一些技术上的错误。"
 #~ msgstr "读书"
 
 #~ msgid "The users have been awarded with badges:"
-#~ msgstr "用户已被授予该奖牌："
+#~ msgstr "用户已被授予该勋章："
 
 #~ msgid "one revision"
 #~ msgid_plural "%(rev_count)s revisions"
@@ -7502,13 +7502,13 @@ msgstr "对不起，好像有一些技术上的错误。"
 #~ msgstr "最新标签"
 
 #~ msgid "Recent awards"
-#~ msgstr "最新奖牌"
+#~ msgstr "最新勋章"
 
 #~ msgid "given to"
 #~ msgstr "授予"
 
 #~ msgid "all awards"
-#~ msgstr "所有奖牌"
+#~ msgstr "所有勋章"
 
 #~ msgid "subscribe to last 30 questions by RSS"
 #~ msgstr "RSS订阅最新30个问题"

@@ -43,6 +43,8 @@ class QuestionsPageSizeMiddleware(object):
         logging.critical(''.join(traceback.format_tb(exc_traceback)))
         logging.critical(exc_type)
         logging.critical(exc_value)
+#samhoo
+        logging.critical(sys.getfilesystemencoding())
         if exc_type == Http404:
             return None
         if getattr(settings, 'DEBUG', False) == True:

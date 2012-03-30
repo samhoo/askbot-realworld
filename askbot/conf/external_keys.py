@@ -118,6 +118,27 @@ settings.register(
         description=_('Twitter consumer secret'),
     )
 )
+#weibo 
+settings.register(
+    livesettings.StringValue(
+        EXTERNAL_KEYS,
+        'WEIBO_KEY',
+        description=_('Weibo consumer key'),
+        help_text=_(
+            'Please register your forum at <a href="%(url)s">'
+            'weibo applications site</a>'
+        ) % {'url': const.DEPENDENCY_URLS['weibo-apps']},
+
+    )
+)
+
+settings.register(
+    livesettings.StringValue(
+        EXTERNAL_KEYS,
+        'WEIBO_SECRET',
+        description=_('Weibo consumer secret'),
+    )
+)
 
 settings.register(
     livesettings.StringValue(

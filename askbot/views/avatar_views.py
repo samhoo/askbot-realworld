@@ -2,6 +2,7 @@
 from the avatar app - the reason is that django-avatar app
 does not support jinja templates
 """
+import logging
 import urllib
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
@@ -93,6 +94,7 @@ def add(request, extra_context=None, next_override=None,
                 primary = True,
             )
             image_file = request.FILES['avatar']
+            logging.debug("samhoo say image_file.name=%s" % image_file.name)
             avatar.avatar.save(image_file.name, image_file)
             avatar.save()
             request.user.message_set.create(

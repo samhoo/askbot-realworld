@@ -24,6 +24,15 @@ settings.register(
 settings.register(
     BooleanValue(
         SOCIAL_SHARING,
+        'ENABLE_SHARING_WEIBO',
+        default=True,
+        description=_('Check to enable sharing of questions on Weibo')
+    )
+)
+
+settings.register(
+    BooleanValue(
+        SOCIAL_SHARING,
         'ENABLE_SHARING_FACEBOOK',
         default=True,
         description=_('Check to enable sharing of questions on Facebook')

@@ -71,6 +71,7 @@ providers = (
     'Flickr',
     'Google',
     'Twitter',
+    'Weibo',
     'LinkedIn',
     'LiveJournal',
     #'myOpenID',
@@ -83,7 +84,7 @@ providers = (
     'identi.ca',
 )
 
-need_extra_setup = ('Twitter', 'Facebook', 'LinkedIn', 'identi.ca',)
+need_extra_setup = ('Weibo', 'Twitter', 'Facebook', 'LinkedIn', 'identi.ca',)
 
 for provider in providers:
     kwargs = {
