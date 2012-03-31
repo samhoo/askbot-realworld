@@ -449,17 +449,16 @@ msgid "account/"
 msgstr "账户/"
 
 #: conf/access_control.py:8
-#, fuzzy
 msgid "Access control settings"
-msgstr "基本设置"
+msgstr "访问控制"
 
 #: conf/access_control.py:17
 msgid "Allow only registered user to access the forum"
-msgstr ""
+msgstr "只允许注册用户访问"
 
 #: conf/badges.py:13
 msgid "Badge settings"
-msgstr "设置"
+msgstr "勋章设置"
 
 #: conf/badges.py:23
 msgid "Disciplined: minimum upvotes for deleted post"
@@ -727,9 +726,8 @@ msgid ""
 msgstr ""
 
 #: conf/external_keys.py:11
-#, fuzzy
 msgid "Keys for external services"
-msgstr "LDAP服务URL"
+msgstr "外包服务KEY管理"
 
 #: conf/external_keys.py:19
 msgid "Google site verification key"
@@ -912,9 +910,8 @@ msgstr ""
 "页面去检查你的输入."
 
 #: conf/forum_data_rules.py:12
-#, fuzzy
 msgid "Data entry and display rules"
-msgstr "设置数据显示方式"
+msgstr "数据输入与显示规则"
 
 #: conf/forum_data_rules.py:22
 #, python-format
@@ -1083,7 +1080,7 @@ msgstr "\"未回答\"问题是什么?"
 
 #: conf/license.py:13
 msgid "Content LicensContent License"
-msgstr ""
+msgstr "内容授权协议"
 
 #: conf/license.py:21
 msgid "Show license clause in the site footer"
@@ -1125,7 +1122,7 @@ msgstr ""
 
 #: conf/login_providers.py:13
 msgid "Login provider setings"
-msgstr ""
+msgstr "登录账号供应商"
 
 #: conf/login_providers.py:22
 msgid ""
@@ -1176,7 +1173,7 @@ msgstr ""
 
 #: conf/markup.py:15
 msgid "Markup in posts"
-msgstr ""
+msgstr "发帖Markup"
 
 #: conf/markup.py:41
 msgid "Enable code-friendly Markdown"
@@ -1253,7 +1250,7 @@ msgstr ""
 
 #: conf/minimum_reputation.py:12
 msgid "Karma thresholds"
-msgstr ""
+msgstr "积分阀值设置"
 
 #: conf/minimum_reputation.py:22
 msgid "Upvote"
@@ -1339,7 +1336,6 @@ msgid ""
 msgstr ""
 
 #: conf/reputation_changes.py:13
-#, fuzzy
 msgid "Karma loss and gain rules"
 msgstr "积分规则"
 
@@ -1401,7 +1397,7 @@ msgstr "减少发布者积分当推荐票取消时"
 
 #: conf/sidebar_main.py:12
 msgid "Main page sidebar"
-msgstr ""
+msgstr "主页sidebar设置"
 
 #: conf/sidebar_main.py:20 conf/sidebar_profile.py:20
 #: conf/sidebar_question.py:19
@@ -1463,14 +1459,12 @@ msgid ""
 msgstr ""
 
 #: conf/sidebar_profile.py:12
-#, fuzzy
 msgid "User profile sidebar"
-msgstr "用户概览"
+msgstr "用户Profile sidebar设置"
 
 #: conf/sidebar_question.py:11
-#, fuzzy
 msgid "Question page sidebar"
-msgstr "您正在浏览的问题含有以下标签"
+msgstr "问题页面sidebar设置"
 
 #: conf/sidebar_question.py:35
 msgid "Show tag list in sidebar"
@@ -1502,7 +1496,7 @@ msgstr "最近被更新的问题"
 
 #: conf/site_modes.py:64
 msgid "Bootstrap mode"
-msgstr ""
+msgstr "Bootstap模式"
 
 #: conf/site_modes.py:74
 msgid "Activate a \"Bootstrap\" mode"
@@ -1518,7 +1512,7 @@ msgstr ""
 
 #: conf/site_settings.py:12
 msgid "URLS, keywords & greetings"
-msgstr ""
+msgstr "URL，关键字和欢迎词"
 
 #: conf/site_settings.py:21
 msgid "Site title for the Q&A forum"
@@ -1677,7 +1671,7 @@ msgstr "接受回答前景色"
 
 #: conf/skin_general_settings.py:15
 msgid "Logos and HTML <head> parts"
-msgstr ""
+msgstr "Logo和HTML <head>设置"
 
 #: conf/skin_general_settings.py:23
 msgid "Q&A site logo"
@@ -1858,7 +1852,7 @@ msgstr ""
 
 #: conf/social_sharing.py:11
 msgid "Sharing content on social networks"
-msgstr "在社会化网络上共享信息"
+msgstr "社会化分享设置"
 
 #: conf/social_sharing.py:20
 #, fuzzy
@@ -1887,7 +1881,7 @@ msgstr "激活在Twitter和Facebook上共享问答"
 
 #: conf/spam_and_moderation.py:10
 msgid "Akismet spam protection"
-msgstr ""
+msgstr "Akismet反垃圾"
 
 #: conf/spam_and_moderation.py:18
 #, fuzzy
@@ -1926,9 +1920,8 @@ msgid "Login, Users & Communication"
 msgstr ""
 
 #: conf/user_settings.py:12
-#, fuzzy
 msgid "User settings"
-msgstr "用户隐私设置"
+msgstr "用户设置"
 
 #: conf/user_settings.py:21
 msgid "Allow editing user screen name"
@@ -1966,7 +1959,7 @@ msgstr "匿名用户邮件"
 
 #: conf/vote_rules.py:14
 msgid "Vote and flag limits"
-msgstr ""
+msgstr "投标和标记"
 
 #: conf/vote_rules.py:24
 msgid "Number of votes a user can cast per day"
@@ -2005,10 +1998,9 @@ msgstr ""
 
 #: conf/widgets.py:13
 msgid "Embeddable widgets"
-msgstr ""
+msgstr "可内嵌widgets"
 
 #: conf/widgets.py:25
-#, fuzzy
 msgid "Number of questions to show"
 msgstr "默认显示的问题数"
 
@@ -2263,17 +2255,15 @@ msgstr "更新了标签"
 
 #: const/__init__.py:217
 msgid "off"
-msgstr ""
+msgstr "关闭"
 
 #: const/__init__.py:218
-#, fuzzy
 msgid "exclude ignored"
-msgstr "包含忽略标签"
+msgstr "排除掉我忽略的"
 
 #: const/__init__.py:219
-#, fuzzy
 msgid "only selected"
-msgstr "个人选项"
+msgstr "只显示我感兴趣的"
 
 #: const/__init__.py:223
 msgid "instantly"
@@ -4319,9 +4309,8 @@ msgid "Ignored tags"
 msgstr "忽略标签"
 
 #: skins/common/templates/widgets/tag_selector.html:36
-#, fuzzy
 msgid "Display tag filter"
-msgstr "选择邮件标签过来"
+msgstr "用标签筛选问题"
 
 #: skins/default/templates/404.jinja.html:3
 #: skins/default/templates/404.jinja.html:10
@@ -5624,7 +5613,7 @@ msgstr "修改图片"
 #: skins/default/templates/user_profile/user_edit.html:25
 #: skins/default/templates/user_profile/user_info.html:19
 msgid "remove"
-msgstr ""
+msgstr "删除图片"
 
 #: skins/default/templates/user_profile/user_edit.html:32
 msgid "Registered user"
