@@ -1,11 +1,17 @@
 Hack askbot before bring it to the real world.
 
-    1.workaround to fix bug when i18n
-    2.replace gravatar by django-avatar
-    3.support login & sharing with sina weibo
-    4.support setting min comment len in livesettings; 
-    5.add/replace more translation in zh_CN
-    6.to be continue....
+    1.fix url bug when i18n
+    2.fix search bug when i18n (workaround, base on database like)
+    3.replace gravatar by django-avatar
+    4.support login & sharing with sina weibo(like twitter)
+    5.support setting minimum comment len in livesettings
+    6.more translation in zh_CN
+    7.to be continue....
 
 Q: Why not fork from askbot https://github.com/ASKBOT/askbot-devel.git
 A: I have tried to find 0.7.39 tag but failed. This repo is forked from 0.7.39 tar package.
+
+Q: How to install askbot realworld
+A: Hmm... 
+   1)install askbot-0.7.39 ;
+   2)replace "askbot" directory in python site-packages(or dist-packages) which "askbot" in askbot-realworld
