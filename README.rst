@@ -12,3 +12,5 @@ askbot-devel repository is open to anyone who wants to help develop Askbot - jus
 
 Askbot is based on code of CNPROG, originally created by Mike Chen 
 and Sailing Cai and some code written for OSQA
+
+see REALWORLD more about hacking askbot
