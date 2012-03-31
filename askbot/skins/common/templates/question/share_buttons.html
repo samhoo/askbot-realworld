@@ -1,3 +1,6 @@
+<script type="text/javascript">
+    askbot['settings']['weiboKey'] = {{settings.WEIBO_KEY}};
+</script>
 {% if settings.ENABLE_SHARING_WEIBO %}{{ macros.share(site = 'weibo', icon = True) }}{% endif %}
 {% if settings.ENABLE_SHARING_TWITTER %}{{ macros.share(site = 'twitter', icon = True) }}{% endif %}
 {% if settings.ENABLE_SHARING_FACEBOOK %}{{ macros.share(site = 'facebook', icon = True) }}{% endif %}

@@ -4985,8 +4985,8 @@ msgid ""
 "This post is a wiki.\n"
 "        Anyone with karma &gt;%(wiki_min_rep)s is welcome to improve it."
 msgstr ""
-"这个发布是wiki.\n"
-"任何积分为 &gt;%(wiki_min_rep)s 都可以改进它."
+"这是个wiki回复.\n"
+"积分大于%(wiki_min_rep)s 的用户都可以改进它."
 
 #: skins/default/templates/macros.html:89
 msgid "asked"
@@ -4994,11 +4994,11 @@ msgstr "提问于"
 
 #: skins/default/templates/macros.html:91
 msgid "answered"
-msgstr "回答"
+msgstr "回答于"
 
 #: skins/default/templates/macros.html:93
 msgid "posted"
-msgstr "发布"
+msgstr "发布于"
 
 #: skins/default/templates/macros.html:123
 msgid "updated"
@@ -5538,7 +5538,7 @@ msgstr[0] ""
 
 #: skins/default/templates/question/sidebar.html:27
 msgid "email the updates"
-msgstr "邮件订阅更新"
+msgstr "邮件订阅"
 
 #: skins/default/templates/question/sidebar.html:30
 msgid ""
@@ -5553,7 +5553,7 @@ msgstr "通过 RSS Feed 来订阅更新"
 
 #: skins/default/templates/question/sidebar.html:36
 msgid "subscribe to rss feed"
-msgstr "RSS订阅更新"
+msgstr "RSS订阅"
 
 #: skins/default/templates/question/sidebar.html:46
 msgid "Stats"

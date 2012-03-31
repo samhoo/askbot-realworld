@@ -1748,7 +1748,7 @@ var socialSharing = function(){
             params: "width=820,height=526,toolbar=1,status=1,resizable=1,scrollbars=1"
         },
         weibo: {
-            url: "http://v.t.sina.com.cn/share/share.php?url={URL}&title={TEXT}&source=bookmark&appkey=3174543744",
+            url: "http://v.t.sina.com.cn/share/share.php?url={URL}&title={TEXT}&source=bookmark&appkey=" + askbot['settings']['weiboKey'],
             params: "width=630,height=436,toolbar=1,status=1,resizable=1,scrollbars=1"
         },
         facebook: {

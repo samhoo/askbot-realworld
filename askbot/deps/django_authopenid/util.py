@@ -736,10 +736,11 @@ class OAuthConnection(object):
         client = oauth.Client(self.consumer)
         request_url = self.parameters['request_token_url']
 
+        logging.debug("SAMHOO callback_url:%s" % callback_url)
+        logging.debug("SAMHOO REQUEST URL:%s" % request_url)
         if callback_url:
             callback_url = '%s%s' % (askbot_settings.APP_URL, callback_url)
             request_body = urllib.urlencode(dict(oauth_callback=callback_url))
-            logging.debug("SAMHOO:%s" % request_url)
 
             self.request_token = self.send_request(
                                             client = client,
