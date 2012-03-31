@@ -120,6 +120,17 @@ settings.register(
 )
 
 settings.register(
+    livesettings.IntegerValue(
+        FORUM_DATA_RULES,
+        'MIN_COMMENT_LENGTH',
+        default=10,
+        description=_(
+            'Minimum length of comment (number of characters)'
+        )
+    )
+)
+
+settings.register(
     livesettings.StringValue(
         FORUM_DATA_RULES,
         'MANDATORY_TAGS',

@@ -1180,11 +1180,13 @@ EditCommentForm.prototype.getCounterUpdater = function(){
         //todo:
         //1) use class instead of color - move color def to css
         var color = 'maroon';
-        var chars = 10;
+        //samhoo
+        //var chars = 10;
+        var chars = askbot['settings']['minCommentLength'];
         if (length === 0){
             var feedback = interpolate(gettext('%s title minchars'), [chars]);
         }
-        else if (length < 10){
+        else if (length < askbot['settings']['minCommentLength']){
             var feedback = interpolate(gettext('enter %s more characters'), [chars - length]);
         }
         else {

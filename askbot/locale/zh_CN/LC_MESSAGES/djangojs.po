@@ -77,16 +77,16 @@ msgstr "读取中..."
 
 #: skins/common/media/js/post.js:128 skins/common/media/js/post.js.c:859
 msgid "tags cannot be empty"
-msgstr "标签不能为空。"
+msgstr "标签不能为空"
 
 #: skins/common/media/js/post.js:134
 msgid "content cannot be empty"
-msgstr "内容不能为空。"
+msgstr "内容不能为空"
 
 #: skins/common/media/js/post.js:135
 #, c-format
 msgid "%s content minchars"
-msgstr "请输入至少 %s 字符。"
+msgstr "请输入至少%s字"
 
 #: skins/common/media/js/post.js:138
 msgid "please enter title"
@@ -95,7 +95,7 @@ msgstr "请输入标题。"
 #: skins/common/media/js/post.js:139 skins/common/media/js/post.js.c:987
 #, c-format
 msgid "%s title minchars"
-msgstr "请输入至少 %s 字符。"
+msgstr "请输入至少%s字"
 
 #: skins/common/media/js/post.js:282
 msgid "insufficient privilege"
@@ -111,19 +111,19 @@ msgstr "注册或者登录"
 
 #: skins/common/media/js/post.js:290
 msgid "anonymous users cannot follow questions"
-msgstr ""
+msgstr "注册用户才能关注问题"
 
 #: skins/common/media/js/post.js:291
 msgid "anonymous users cannot subscribe to questions"
-msgstr ""
+msgstr "注册用户才能订阅问题"
 
 #: skins/common/media/js/post.js:292
 msgid "anonymous users cannot vote"
-msgstr ""
+msgstr "注册用户才能投票"
 
 #: skins/common/media/js/post.js:294
 msgid "please confirm offensive"
-msgstr "确定要归类该帖为广告、人身攻击、恶意言论吗？"
+msgstr "确定要归类该帖为垃圾帖（广告、人身攻击、恶意言论）吗？"
 
 #: skins/common/media/js/post.js:295
 msgid "anonymous users cannot flag offensive posts"
@@ -139,11 +139,11 @@ msgstr "匿名用户不能删除或撤销删除帖子"
 
 #: skins/common/media/js/post.js:298
 msgid "post recovered"
-msgstr "操作成功！该帖子已被恢复。"
+msgstr "该已成功恢复。"
 
 #: skins/common/media/js/post.js:299
 msgid "post deleted"
-msgstr "操作成功！该帖子已删除。"
+msgstr "该帖已成功删除。"
 
 #: skins/common/media/js/post.js:539 skins/old/media/js/post.js:535
 msgid "Follow"
@@ -175,21 +175,21 @@ msgstr "添加评论"
 
 #: skins/common/media/js/post.js:960
 msgid "save comment"
-msgstr ""
+msgstr "保存评论"
 
 #: skins/common/media/js/post.js:990
 #, c-format
 msgid "enter %s more characters"
-msgstr "还可写%s字符"
+msgstr "还要写%s字"
 
 #: skins/common/media/js/post.js:995
 #, c-format
 msgid "%s characters left"
-msgstr "还可写%s字符"
+msgstr "还可写%s字"
 
 #: skins/common/media/js/post.js:1066
 msgid "cancel"
-msgstr ""
+msgstr "取消"
 
 #: skins/common/media/js/post.js:1109
 msgid "confirm abandon comment"
