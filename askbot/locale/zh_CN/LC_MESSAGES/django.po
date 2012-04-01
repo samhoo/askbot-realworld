@@ -727,7 +727,7 @@ msgstr ""
 
 #: conf/external_keys.py:11
 msgid "Keys for external services"
-msgstr "外包服务KEY管理"
+msgstr "外部服务KEY管理"
 
 #: conf/external_keys.py:19
 msgid "Google site verification key"
@@ -911,7 +911,7 @@ msgstr ""
 
 #: conf/forum_data_rules.py:12
 msgid "Data entry and display rules"
-msgstr "数据输入与显示规则"
+msgstr "输入与显示规则"
 
 #: conf/forum_data_rules.py:22
 #, python-format
@@ -1959,7 +1959,7 @@ msgstr "匿名用户邮件"
 
 #: conf/vote_rules.py:14
 msgid "Vote and flag limits"
-msgstr "投标和标记"
+msgstr "投票和标记"
 
 #: conf/vote_rules.py:24
 msgid "Number of votes a user can cast per day"
@@ -5653,7 +5653,7 @@ msgstr "关注问题"
 #: skins/default/templates/user_profile/user_inbox.html:18
 #: skins/default/templates/user_profile/user_tabs.html:12
 msgid "inbox"
-msgstr "收件箱"
+msgstr "消息"
 
 #: skins/default/templates/user_profile/user_inbox.html:34
 msgid "Sections:"
@@ -5791,7 +5791,7 @@ msgstr "发送信息给%(username)s"
 msgid ""
 "An email will be sent to the user with 'reply-to' field set to your email "
 "address. Please make sure that your address is entered correctly."
-msgstr "邮件将被发送给接受回复的用户地址，请确保你输入的邮件地址是正确的"
+msgstr "邮件将发送给该用户注册所使用的邮件地址"
 
 #: skins/default/templates/user_profile/user_moderate.html:46
 msgid "Message sent"
@@ -5859,7 +5859,7 @@ msgstr "%(username)s用户概览"
 #: skins/default/templates/user_profile/user_recent.html:4
 #: skins/default/templates/user_profile/user_tabs.html:31
 msgid "activity"
-msgstr "活跃问题"
+msgstr "动态"
 
 #: skins/default/templates/user_profile/user_recent.html:21
 #: skins/default/templates/user_profile/user_recent.html:28
